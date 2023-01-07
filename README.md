@@ -9,13 +9,13 @@ We have structured as well as unstructured (json) data.
 
 ![image](https://user-images.githubusercontent.com/83829614/211152878-495f1d10-227b-441b-8e04-fe9c6ec2952d.png)
 
-![image](https://user-images.githubusercontent.com/83829614/211152888-c180702b-d712-4df0-bf76-74dec416accc.png)
-
 The data is stored in aws s3 bucket.
 
 Snowpipes are used for auto-ingeston. Whenever new data is uploaded in the bucket, SQS queue notificaiton triggers the snowpipe for auto-ingestion.
 
 Then the data is loaded into inbound tables. In snowflake we have 3 databses - inbound, canonical, outbound.
+
+![image](https://user-images.githubusercontent.com/83829614/211152888-c180702b-d712-4df0-bf76-74dec416accc.png)
 
 The raw data is loaded in the inbound database. Then using stream and task required transformation are done and the data is populated in canonical database.
 
