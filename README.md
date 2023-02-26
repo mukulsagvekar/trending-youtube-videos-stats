@@ -21,6 +21,13 @@ The raw data is loaded in the inbound database. Then using stream and task requi
 
 The json data in inbound db was stored as a variant. The major transformation was to transform unstructured data to structured data for analytics.
 
+Raw json data in inbound:
+![image](https://user-images.githubusercontent.com/83829614/221406622-654c5164-78d8-40f1-8f5c-77d03ea406a0.png)
+
+Transformed json data: 
+![image](https://user-images.githubusercontent.com/83829614/221406699-1e1b6736-629c-48fc-8287-6ee0b32252a0.png)
+
+
 The data is moved to outbound db using stream and task and the data is used for analytics which is done using tableau.
 
 Tableau Dashboard - https://public.tableau.com/app/profile/mukul6401/viz/TrendingYoutubeVideosStats/Dashboard1?publish=yes
