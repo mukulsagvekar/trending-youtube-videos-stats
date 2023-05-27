@@ -3,7 +3,7 @@
 In this project, build a pipeline using AWS services and snowflake, used tableau for visualization.
 
 The data is available in kaggle - https://www.kaggle.com/datasets/datasnaek/youtube-new
-We have structured as well as unstructured (json) data.
+We have structured as well as semi-structured (json) data.
 
 # Pipeline:
 
@@ -19,7 +19,7 @@ Then the data is loaded into inbound tables. In snowflake we have 3 databses - i
 
 The raw data is loaded in the inbound database. Then using stream and task required transformation are done and the data is populated in canonical database.
 
-The json data in inbound db was stored as a variant. The major transformation was to transform unstructured data to structured data for analytics.
+The json data in inbound db was stored as a variant. The major transformation was to transform semi-structured data to structured data for analytics.
 
 Raw json data in inbound:
 ![image](https://user-images.githubusercontent.com/83829614/221406622-654c5164-78d8-40f1-8f5c-77d03ea406a0.png)
