@@ -1,6 +1,6 @@
 # trending-youtube-videos-stats
 
-Objective: to build a data pipeline to load and transform data using AWS and Snowflake and used visualize the data using Tableau.
+Objective: To build a data pipeline to load and transform data using AWS and Snowflake and used visualize the data using Tableau.
 
 The data is available on kaggle - https://www.kaggle.com/datasets/datasnaek/youtube-new
 It consists of structured as well as semi-structured (json) data.
