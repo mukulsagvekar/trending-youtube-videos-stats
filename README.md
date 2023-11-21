@@ -1,9 +1,9 @@
 # trending-youtube-videos-stats
 
-In this project, build a pipeline using AWS services and snowflake, used tableau for visualization.
+Objective: to build a data pipeline to load and transform data using AWS and Snowflake and used visualize the data using Tableau.
 
-The data is available in kaggle - https://www.kaggle.com/datasets/datasnaek/youtube-new
-We have structured as well as semi-structured (json) data.
+The data is available on kaggle - https://www.kaggle.com/datasets/datasnaek/youtube-new
+It consists of structured as well as semi-structured (json) data.
 
 # Pipeline:
 
@@ -11,15 +11,15 @@ We have structured as well as semi-structured (json) data.
 
 The data is stored in aws s3 bucket.
 
-Snowpipes are used for auto-ingeston. Whenever new data is uploaded in the bucket, SQS queue notificaiton triggers the snowpipe for auto-ingestion.
+Snowpipes are used for auto-ingeston. Whenever new files are uploaded in the bucket, SQS queue triggers the snowpipe for auto-ingestion.
 
-Then the data is loaded into inbound tables. In snowflake we have 3 databses - inbound, canonical, outbound.
+Snowpipe loads the data in inbound db. In snowflake we have three databases - inbound, canonical, outbound.
 
 ![image](https://user-images.githubusercontent.com/83829614/211152888-c180702b-d712-4df0-bf76-74dec416accc.png)
 
-The raw data is loaded in the inbound database. Then using stream and task required transformation are done and the data is populated in canonical database.
+The raw data is loaded in the inbound database. Then using stream and task, the data is transformed and loaded populated in canonical database.
 
-The json data in inbound db was stored as a variant. The major transformation was to transform semi-structured data to structured data for analytics.
+The json data in inbound db is stored in a variant data type column. This semi-structured data is transformed to structured data for analytics.
 
 Raw json data in inbound:
 ![image](https://user-images.githubusercontent.com/83829614/221406622-654c5164-78d8-40f1-8f5c-77d03ea406a0.png)
@@ -28,7 +28,7 @@ Transformed json data:
 ![image](https://user-images.githubusercontent.com/83829614/221406699-1e1b6736-629c-48fc-8287-6ee0b32252a0.png)
 
 
-The data is moved to outbound db using stream and task and the data is used for analytics which is done using tableau.
+The data is moved to outbound db using stream and task and the data is used for analysis and visualization.
 
 Tableau Dashboard - https://public.tableau.com/app/profile/mukul6401/viz/TrendingYoutubeVideosStats/Dashboard1?publish=yes
 
